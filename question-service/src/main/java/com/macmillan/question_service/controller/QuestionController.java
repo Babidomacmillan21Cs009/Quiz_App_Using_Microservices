@@ -43,18 +43,18 @@ public class QuestionController {
         return questionService.getQuestionsByCategory(category);
     }
 
-    @PostMapping("/generate")
+    @GetMapping("/generate")
     public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName,
                                                              @RequestParam Integer numOfQuestion) {
         return questionService.getQuestionForQuiz(categoryName, numOfQuestion);
     }
 
-    @PostMapping("/getQuestions")
+    @GetMapping("/getQuestions")
     public ResponseEntity<List<QuestionDTO>> getQuestionsFromId(@RequestBody List<Integer> questionIds) {
         return questionService.getQuestionsFromId(questionIds);
     }
 
-    @PostMapping("/getScore")
+    @GetMapping("/getScore")
     public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses) {
         return questionService.getScore(responses);
     }
