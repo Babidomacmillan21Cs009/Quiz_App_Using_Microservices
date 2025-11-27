@@ -1,10 +1,10 @@
-🎯 Quiz Application – Microservices
+### 🎯 Quiz Application – Microservices
 📘 What It Does
 
 This project is a microservices-based Quiz Application where quizzes are created from random questions based on a selected category.
 Users can take quizzes, submit answers, and get their final score.
 
-⭐ Main Features
+## ⭐ Main Features
 
 Create quiz by selecting category and number of questions
 
@@ -22,7 +22,7 @@ Service discovery using Eureka Server
 
 Routing handled by API Gateway
 
-🛠 Tech Used
+## 🛠 Tech Used
 
 Java 17
 
@@ -40,7 +40,7 @@ JPA / Hibernate
 
 Maven
 
-📚 Skills Learned / Used
+## 📚 Skills Learned / Used
 
 Microservices architecture design
 
@@ -56,7 +56,7 @@ Clean controller–service–repository layered backend
 
 REST API development with proper request/response models
 
-▶️ How to Run
+## ▶️ How to Run
 
 Start MySQL and configure DB in each service’s application.properties
 
@@ -70,7 +70,7 @@ Start Quiz Service
 
 Test all APIs using Postman or browser
 
-📌 API Endpoints
+## 📌 API Endpoints
 | Endpoint                        | Method | Description                       |
 | ------------------------------- | ------ | --------------------------------- |
 | `/question/allQuestions`        | GET    | Get all questions                 |
@@ -83,7 +83,7 @@ Test all APIs using Postman or browser
 | `/question/getScore`            | POST   | Calculate score                   |
 
 
-🧩 Quiz Service
+## 🧩 Quiz Service
 | Endpoint             | Method | Description               |
 | -------------------- | ------ | ------------------------- |
 | `/quiz/create`       | POST   | Create a quiz             |
@@ -91,7 +91,7 @@ Test all APIs using Postman or browser
 | `/quiz/submit/{id}`  | POST   | Submit quiz and get score |
 
 
-✔ Example Flow
+## ✔Example Flow
 
 Create a quiz → /quiz/create
 
