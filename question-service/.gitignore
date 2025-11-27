@@ -34,4 +34,4 @@ build/
 
 
 # Ignore Spring Boot properties
-/src/main/resources/application.properties
+quiz-service/src/main/resources/application.properties

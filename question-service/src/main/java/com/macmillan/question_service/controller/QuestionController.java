@@ -28,7 +28,7 @@ public class QuestionController {
         return questionService.addQuestion(question);
     }
 
-    @PutMapping("updateQuestion")
+    @PutMapping("/updateQuestion")
     public ResponseEntity<String> updateQuestion(@RequestBody Question question){
         return questionService.updateQuestion(question);
     }

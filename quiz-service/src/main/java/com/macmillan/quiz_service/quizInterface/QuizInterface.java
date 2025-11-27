@@ -6,6 +6,7 @@ import com.macmillan.quiz_service.model.Response;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,9 +18,9 @@ public interface QuizInterface {
     public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName,
                                                              @RequestParam Integer numOfQuestion);
 
-    @GetMapping("question/getQuestions")
+    @PostMapping("question/getQuestions")
     public ResponseEntity<List<QuestionDTO>> getQuestionsFromId(@RequestBody List<Integer> questionIds);
 
-    @GetMapping("question/getScore")
+    @PostMapping("question/getScore")
     public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses);
 }
