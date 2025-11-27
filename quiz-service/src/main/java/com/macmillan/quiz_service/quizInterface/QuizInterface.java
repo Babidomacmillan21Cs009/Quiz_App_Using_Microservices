@@ -1,0 +1,25 @@
+package com.macmillan.quiz_service.quizInterface;
+
+
+import com.macmillan.quiz_service.model.QuestionDTO;
+import com.macmillan.quiz_service.model.Response;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
+@FeignClient("QUESTION-SERVICE")
+public interface QuizInterface {
+    @GetMapping("question/generate")
+    public ResponseEntity<List<Integer>> getQuestionsForQuiz(@RequestParam String categoryName,
+                                                             @RequestParam Integer numOfQuestion);
+
+    @GetMapping("question/getQuestions")
+    public ResponseEntity<List<QuestionDTO>> getQuestionsFromId(@RequestBody List<Integer> questionIds);
+
+    @GetMapping("question/getScore")
+    public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses);
+}
