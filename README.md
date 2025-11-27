@@ -1,4 +1,4 @@
-### 🎯 Quiz Application – Microservices
+## 🎯 Quiz Application – Microservices
 📘 What It Does
 
 This project is a microservices-based Quiz Application where quizzes are created from random questions based on a selected category.
