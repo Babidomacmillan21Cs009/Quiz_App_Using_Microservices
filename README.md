@@ -1,100 +1,102 @@
-🎯 Quiz Application – Microservices (Spring Boot)
+🎯 Quiz Application – Microservices
+📘 What It Does
 
-A simple Quiz Application built using Spring Boot Microservices, Eureka Server, API Gateway, Feign Client, and MySQL.
+This project is a microservices-based Quiz Application where quizzes are created from random questions based on a selected category.
+Users can take quizzes, submit answers, and get their final score.
 
-The application has two main services:
+⭐ Main Features
 
-Question Service – manages questions
+Create quiz by selecting category and number of questions
 
-Quiz Service – creates quizzes, fetches questions, and calculates scores
+Fetch quiz questions (without exposing correct answers)
 
-🚀 Tech Stack
+Submit answers and calculate score
+
+Manage questions: add, update, delete, fetch by category
+
+Random question generation using MySQL
+
+Communication between services using Feign Client
+
+Service discovery using Eureka Server
+
+Routing handled by API Gateway
+
+🛠 Tech Used
 
 Java 17
 
 Spring Boot
 
-Spring Cloud (Eureka, Feign, Gateway)
+Spring Cloud Eureka
 
-MySQL
+Spring Cloud API Gateway
+
+OpenFeign Client
+
+MySQL Database
 
 JPA / Hibernate
 
 Maven
 
-🧱 Services Overview
-1. Question Service
+📚 Skills Learned / Used
 
-Add / update / delete questions
+Microservices architecture design
 
-Get questions by category
+Inter-service communication using Feign Client
 
-Generate random questions for a quiz
+Load-balanced routing with API Gateway
 
-Convert Question → DTO to hide right answers
+Service discovery using Eureka
 
-Calculate score
+DTO-based data transfer
 
-2. Quiz Service
+Clean controller–service–repository layered backend
 
-Create quiz
+REST API development with proper request/response models
 
-Fetch quiz questions using Feign Client
+▶️ How to Run
 
-Submit quiz and get score
-
-Store quiz details in database
-
-3. Service Registry
-
-Eureka Server for service discovery
-
-4. API Gateway
-
-Single entry point
-
-Routes requests to microservices
-
-📌 Endpoints
-Question Service
-
-/question/allQuestions
-/question/addQuestion
-/question/updateQuestion
-/question/deleteQuestion/{id}
-/question/category/{category}
-/question/generate
-/question/getQuestions
-/question/getScore
-
-Quiz Service
-
-/quiz/create
-/quiz/getQuiz/{id}
-/quiz/submit/{id}
-
-⚙️ How to Run
+Start MySQL and configure DB in each service’s application.properties
 
 Start Eureka Server
 
-Run Question Service
+Start API Gateway
 
-Run Quiz Service
+Start Question Service
 
-Run API Gateway
+Start Quiz Service
 
-Test APIs using Postman or browser
+Test all APIs using Postman or browser
 
-✔ Features
+📌 API Endpoints
+| Endpoint                        | Method | Description                       |
+| ------------------------------- | ------ | --------------------------------- |
+| `/question/allQuestions`        | GET    | Get all questions                 |
+| `/question/addQuestion`         | POST   | Add a new question                |
+| `/question/updateQuestion`      | PUT    | Update a question                 |
+| `/question/deleteQuestion/{id}` | DELETE | Delete a question                 |
+| `/question/category/{category}` | GET    | Get questions by category         |
+| `/question/generate`            | GET    | Get random question IDs           |
+| `/question/getQuestions`        | POST   | Get questions by IDs (DTO format) |
+| `/question/getScore`            | POST   | Calculate score                   |
 
-Clean microservices architecture
 
-Feign Client communication
+🧩 Quiz Service
+| Endpoint             | Method | Description               |
+| -------------------- | ------ | ------------------------- |
+| `/quiz/create`       | POST   | Create a quiz             |
+| `/quiz/getQuiz/{id}` | GET    | Get quiz questions (DTO)  |
+| `/quiz/submit/{id}`  | POST   | Submit quiz and get score |
 
-Separate databases for each service
 
-Random question generation
+✔ Example Flow
 
-Score calculation
+Create a quiz → /quiz/create
 
-DTO to hide answers
+Fetch quiz questions → /quiz/getQuiz/{id}
+
+Submit answers → /quiz/submit/{id}
+
+Get final score
